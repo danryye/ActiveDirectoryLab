@@ -105,3 +105,14 @@ To avoid any confusion in later steps, we can rename these connections to distin
 
 ![Network Connections](images/network-connections-2.png)
 
+We will want to give it a static IP address to the domain controller within the internal network. Right click on internal network connection, and open its properties. Open the properties of IPv4 protocol. Select the option to use a static IP address, rather than being assigned one automatically. Following the diagram, we will use the IP address of 172.16.0.1 with a subnet mask of 255.255.255.0. For the DNS server, we will it the loopback address of 127.0.0.1.
+
+![NAssign Static IP to Domain Controller](images/network-connections-3.png)
+
+Before continuing, let's rename our machine from its given name to something that clearly defines that it is the domain controller. Right click the windows icon at the bottom left and select "System". Click on "Rename this PC". I will use "DC" as its new name. Allow the machine to restart.
+
+![Rename PC](images/rename-pc.png)
+
+
+
+
