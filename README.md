@@ -35,7 +35,7 @@ We will name this VM as "Domain Controller" which will be acting as our server m
 
 Note: We will not be mounting the ISO file at this step, as it can lead to issues during the initial boot
 
-![Naming Comain Controller](images/naming-domain-controller.png)
+![Naming Comain Controller Machine](images/naming-domain-controller.png)
 
 When assigning the resources for the VM, it is recommended to provide at least 2 GBs of RAM and 1 core for the processor. If you have the available resources, more can added to speed up later steps.
 
@@ -78,4 +78,30 @@ Follow the on screen steps to complete the installation for Windows Server 2019
 When prompted, select the "Windows Server 2019 Standard Evaluation (Desktop Experience)" for ease of access Windows GUI.
 
 ![Install Windows Server 2019](images/install-win-server-2019.png)
+
+Once the setup is complete and you are signed into Windows, we will first want to install the VM Windows Guest Additions features for more ease of access.
+
+At the top of the VM application, go to "Devices", and "Mount Guest Additions CD Image"
+
+![Mount Guest Additions CD Image](images/win-guest-additions.png)
+
+Open the Windows Explorer, navigate to "This PC". Under the Devices and drives, double click on "VirtualBox Guest Additions".
+
+![VirtualBox Guest Additions](images/win-guest-additions-2.png)
+
+Inside the disc, run the application called "VBoxWindowsAdditions-amd64"
+
+![VirtualBox Windows Additions](images/win-guest-additions-3.png)
+
+Follow the instructions on the setup wizard to complete the installation. You will be prompted to restart the machine after completing the setup. We recommend doing so to enable its new features.
+
+![VirtualBox Windows Additions Setup](images/win-guest-additions-4.png)
+
+Once logged back into Windows, we now want to configure the network interfaces on our domain controller machine. Following the diagram, We want one interface for internet connection, while the second interface is for the internal network. Navigate to your network connections through the network icon at the bottom right. In my case, "Ethernet" is my interface for internet connection, and "Ethernet 2" is my interface for the internal network.
+
+![Network Connections](images/network-connections.png)
+
+To avoid any confusion in later steps, we can rename these connections to distinctly represent what they do. I renamed "Ethernet" to "\_INTERNET_" and "Ethernet 2" to "\_INTERNAL|"
+
+![Network Connections](images/network-connections-2.png)
 
