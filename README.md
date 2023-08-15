@@ -224,3 +224,17 @@ Next, right click on our newly created "_Users" OU and add a new User to it.
 I'm going to use the generic name of "John Doe" for the test user. I will follow the common convention of using the first intial of first name + last for the logon username.
 
 ![Add User to AD](images/add-user-to-ad-4.png)
+
+<h3>Step 7: Create the Client VM Machine</h3>
+
+We head back to the Oracle VirtualBox application to create a new virtual machine.
+
+Just like the machine for our domain controller, we start by clicking "New" at the top.
+
+![Add Client Machine](images/client-machine.png)
+
+Name the machine "Client" and double click it to turn it on. When prompted for a bootable medium, navigate to and select the Windows 10 ISO file downloaded.
+
+![Add Client Machine](images/client-machine-2.png)
+
+Follow the on screen installation instructions to complete the installation. I selected "Windows 10 Pro" when asked for the OS version.
