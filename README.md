@@ -277,5 +277,5 @@ Use the username and password for the "John Doe" user we created previously.
 
 Congratulations! You are now signed into an account on the domain from this machine.
 
-![Rename PC advanced](images/client-machine-10.png)
+![Rename PC advanced](images/client-machine-11.png)
 
