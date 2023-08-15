@@ -238,3 +238,44 @@ Name the machine "Client" and double click it to turn it on. When prompted for a
 ![Add Client Machine](images/client-machine-2.png)
 
 Follow the on screen installation instructions to complete the installation. I selected "Windows 10 Pro" when asked for the OS version.
+
+While Windows is installing, return to the Oracle VirtualBox app. Go into the Settings for the Client VM. In the Network tab, set Adapter 1 to be Attached to the "Internal Network". We want this machine to emulate a client machine inside our private network.
+
+![Add Client Machine](images/client-machine-3.png)
+
+Once signed into Windows on the client machine, open up the Command Prompt and type in "ipconfig" to ensure that all the network configurations are consistent with our settings.
+
+Here we see that this device is connected to our internal network, the default gateway address is our domain controller, and IP address assigned to the machine is within the scope that we previously set.
+
+![Add Client Machine](images/client-machine-4.png)
+
+With everything working, we can rename this pc and join it to the domain. Right click on the Windows icon at the bottom left, select System.
+
+Scroll to the bottom of the page and select "Rename this PC (advanced)"
+
+In the System Properties, Select the option to change the domain.
+
+![Rename PC advanced](images/client-machine-5.png)
+
+I'm going to rename it to "Client-01"
+
+Enter in the domain "mydomain.com" and click "OK".
+
+![Rename PC advanced](images/client-machine-6.png)
+
+When asked about an account needed to join the domain, use the account named "John Doe" with the username "jdoe" we previously created in AD. The machine will need to be restarted afterwards to apply the changes.
+
+![Rename PC advanced](images/client-machine-7.png)
+
+Once restarted and back to the sign in screen, instead of signing into the local account, we can now sign in using an account on the domain. Select the "Other users".
+
+![Rename PC advanced](images/client-machine-8.png)
+
+Use the username and password for the "John Doe" user we created previously.
+
+![Rename PC advanced](images/client-machine-9.png)
+
+Congratulations! You are now signed into an account on the domain from this machine.
+
+![Rename PC advanced](images/client-machine-10.png)
+
