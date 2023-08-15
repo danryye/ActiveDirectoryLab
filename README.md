@@ -135,5 +135,49 @@ Select "Active Directory Domain Services" and wait for the installation to compl
 
 ![Add Roles and Features](images/add-roles-and-features-4.png)
 
+In the Server Manager, go to the flag icon at the top right. Select "Promote this server to a domain controller"
 
+![Promote to domain controller](images/add-roles-and-features-5.png)
+
+In the popup menu, select "Add a new forest", and we'll give the domain name a generic name of "mydomain.com". We will use the default setting for the other options. Continue to click "Next" until given the option to "Install". The machine will automatically restart after the installation is complete.
+
+![Promote to domain controller](images/add-roles-and-features-6.png)
+
+After the restart, you should notice our given domain name of "mydomain" coming before your the username on the sign in screen. Sign in normally with your previous password.
+
+![Added to domain](images/added-to-domain.png)
+
+<h3>Step 4: Set up Remote Access</h3>
+
+Open up the "Add Roles and Features Wizard" as done in the previous step. This time, we will be installing the "Remote Access" role.
+
+![Install Remote Access](images/remote-access.png)
+
+We will include the "Routing" feature to allow clients on our private network to be able to access the internet. Continue to click "Next" until given the option to "Install". After it is complete, close the window.
+
+![Install Remote Access](images/remote-access-2.png)
+
+In the Server Manager, under "Tools" at the top right, select "Routing and Remote Access"
+
+![Install Remote Access](images/remote-access-3.png)
+
+Right click on the server "DC and select "Configure and Enable Routing and Remote Access"
+
+![Install Remote Access](images/remote-access-4.png)
+
+Select the NAT option to allow our internal network to connect to the internet through a single IP.
+
+![Install Remote Access](images/remote-access-5.png)
+
+In the next step, select the "\_INTERNET_" interface for the public interface to connect to the internet. Continue with the wizard until you reach "Finish".
+
+![Install Remote Access](images/remote-access-6.png)
+
+With NAT nad RAS set up, our clients to the domain will be able to access the internet once DHCP is set up.
+
+<h3>Step 5: Set up DHCP</h3>
+
+Open up the "Add Roles and Features Wizard" as done in the previous step. This time, we will be installing the "DHCP" role.
+
+![DHCP Setup](images/dhcp.png)
 
