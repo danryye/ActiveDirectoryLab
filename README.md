@@ -177,7 +177,50 @@ With NAT nad RAS set up, our clients to the domain will be able to access the in
 
 <h3>Step 5: Set up DHCP</h3>
 
-Open up the "Add Roles and Features Wizard" as done in the previous step. This time, we will be installing the "DHCP" role.
+Open up the "Add Roles and Features Wizard" as done in the previous step. This time, we will be installing the "DHCP" role. Continue to click "Next" until given the option to "Install". After it is complete, close the window.
 
 ![DHCP Setup](images/dhcp.png)
 
+In the Server Manager, under "Tools" at the top right, select "DHCP"
+
+![DHCP Setup](images/dhcp-2.png)
+
+In the DHCP window, we want to set the scope of addresses as defined in our network diagram. Expand the drop down on the server we created (dc.mydomain.com). Right click on IPv4, and select "New Scope".
+
+![DHCP Setup](images/dhcp-3.png)
+
+In the "New Scope Wizard", I will give this scope the name of "172.16.0.100-200" to describe the range we are using.
+
+![DHCP Setup](images/dhcp-4.png)
+
+As defined in our network diagram, the starting IP address will be "172.16.0.100" and the ending IP address will be "172.16.0.200", with a subnet length of /24.
+
+![DHCP Setup](images/dhcp-5.png)
+
+For the Default Gateway, we will give it the IP address of our domain controller. Enter "172.16.0.1", and click "Add". Continue to click "Next" until given the "Finish" option.
+
+![DHCP Setup](images/dhcp-6.png)
+
+In the DHCP window, right click on the server, and select "Authorize". Refresh the server afterwards.
+
+![DHCP Setup](images/dhcp-7.png)
+
+<h3>Step 6: Creating a client user in Active Directory</h3>
+
+Before creating our client machine to join the domain, we need to create a user account we can use in Active Directory.
+
+Return to the Windows Administrative Tools and open the "Active Directory Users and Computers" once again.
+
+I'm going to create a new Organizational Unit (OU) under our domain called "_Users".
+
+![Add User to AD](images/add-user-to-ad.png)
+
+![Add User to AD](images/add-user-to-ad-2.png)
+
+Next, right click on our newly created "_Users" OU and add a new User to it.
+
+![Add User to AD](images/add-user-to-ad-3.png)
+
+I'm going to use the generic name of "John Doe" for the test user. I will follow the common convention of using the first intial of first name + last for the logon username.
+
+![Add User to AD](images/add-user-to-ad-4.png)
