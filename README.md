@@ -25,6 +25,8 @@ Downloaded from Microsoft's [official website.](https://www.microsoft.com/en-us/
 
 <h2>Insructions</h2>
 
+<h3>Step 1: Setup the Domain Controller Machine</h3>
+
 Once Oracle Virtual Box is installed, we begin by creating a new virtual machine.
 
 Click on the New button at the top.
@@ -97,6 +99,8 @@ Follow the instructions on the setup wizard to complete the installation. You wi
 
 ![VirtualBox Windows Additions Setup](images/win-guest-additions-4.png)
 
+<h3>Step 2: Configure the Network Interfaces Settings</h3>
+
 Once logged back into Windows, we now want to configure the network interfaces on our domain controller machine. Following the diagram, We want one interface for internet connection, while the second interface is for the internal network. Navigate to your network connections through the network icon at the bottom right. In my case, "Ethernet" is my interface for internet connection, and "Ethernet 2" is my interface for the internal network.
 
 ![Network Connections](images/network-connections.png)
@@ -113,6 +117,23 @@ Before continuing, let's rename our machine from its given name to something tha
 
 ![Rename PC](images/rename-pc.png)
 
+<h3>Step 3: Set up Active Directory</h3>
+
+Open the Server Manager. In the Dashboard, go to "Manage" at the top right and select "Add Roles and Features".
+
+![Add Roles and Features](images/add-roles-and-features.png)
+
+In the wizard slect "Role-based or feature-based installation"
+
+![Add Roles and Features](images/add-roles-and-features-2.png)
+
+Select the current machine named "DC"
+
+![Add Roles and Features](images/add-roles-and-features-3.png)
+
+Select "Active Directory Domain Services" and wait for the installation to complete.
+
+![Add Roles and Features](images/add-roles-and-features-4.png)
 
 
 
